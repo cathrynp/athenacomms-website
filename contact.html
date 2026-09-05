@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Athena Communications</title>
+<meta name="description" content="Get in touch with Athena Communications for impactful communications, messaging, and storytelling.">
+<link rel="icon" href="images/athena-logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo"><img src="images/athena-logo.png" alt="Athena Communications"></a>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="contact-hero">
+  <div class="wrap">
+    <h1>Get in touch</h1>
+    <p>Tell us a bit about your project and we'll get back to you.</p>
+  </div>
+</section>
+
+<div class="contact-form-wrap">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden-field">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </p>
+
+    <div class="field">
+      <label for="name">Your Name*</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="company">Company name*</label>
+      <input type="text" id="company" name="company" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Your email*</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="message">Message*</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">&copy; Athena Communications 2026</div>
+</footer>
+
+</body>
+</html>
