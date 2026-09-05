@@ -132,7 +132,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: center;
+  align-items: start;
 }
 
 .work-row.reverse .work-media { order: 2; }
@@ -149,8 +149,8 @@ img { max-width: 100%; display: block; }
   color: var(--olive-dark);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 12px;
 }
 
 .work-text p {
@@ -213,16 +213,16 @@ img { max-width: 100%; display: block; }
 
 .client-grid {
   margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
+  gap: 32px 40px;
 }
 
 .client-grid img {
-  max-height: 56px;
-  max-width: 140px;
+  max-height: 72px;
+  max-width: 180px;
   width: auto;
   opacity: 1;
 }
