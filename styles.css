@@ -10,6 +10,7 @@
   --orange: #F0812E;
   --rust: #C1442D;
   --yellow: #FFC20E;
+  --yellow-pale: #FFF9D9;
   --line: #E7E1D3;
   --max: 1080px;
 }
@@ -101,6 +102,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* What We Do */
+
+.section-yellow {
+  background: var(--yellow-pale);
+  padding: 40px 0;
+}
 
 .section-head {
   text-align: center;
