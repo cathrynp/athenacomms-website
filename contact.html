@@ -27,8 +27,8 @@
   </div>
 </section>
 
-<div class="contact-form-wrap">
-  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+<div class="contact-form-wrap" id="contact-form-wrap">
+  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" id="contact-form">
     <input type="hidden" name="form-name" value="contact">
     <p class="hidden-field">
       <label>Don't fill this out if you're human: <input name="bot-field"></label>
@@ -57,6 +57,36 @@
     <button type="submit" class="btn">Submit</button>
   </form>
 </div>
+
+<script>
+  function encodeForm(data) {
+    return Object.keys(data)
+      .map(function(key) { return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]); })
+      .join("&");
+  }
+
+  var form = document.getElementById("contact-form");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var formData = new FormData(form);
+    var payload = {};
+    formData.forEach(function(value, key) { payload[key] = value; });
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeForm(payload)
+    })
+    .then(function() {
+      document.getElementById("contact-form-wrap").innerHTML =
+        '<p style="text-align:center; font-size:18px;">Thanks &mdash; your message has been sent. Taking you back to the homepage&hellip;</p>';
+      setTimeout(function() { window.location.href = "/"; }, 2200);
+    })
+    .catch(function() {
+      alert("Something went wrong sending your message. Please try again, or email us directly.");
+    });
+  });
+</script>
 
 <footer class="site-footer">
   <div class="wrap">&copy; Athena Communications 2026</div>
